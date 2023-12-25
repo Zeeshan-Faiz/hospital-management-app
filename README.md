@@ -2,8 +2,6 @@
 
 ![image.info](hospital-management-snapshot.png)
 
-![image.info](sql-query-snapshot.png)
-
 ## Overview
 
 Welcome to the Hospital Management Application, a Java-based solution for managing patient details, viewing doctors, and booking appointments. This application utilizes JDBC with MySQL as the backend database, offering seamless connectivity and efficient data management.
@@ -32,6 +30,41 @@ https://dev.mysql.com/downloads/connector/j/
 3. **SQL Query**: Run the SQL query provided alongside in the repository in MySQL WorkBench or MySQL Shell to create schemas for patients and doctors.
 
 4. **JDBC Driver**: We'll be using JDBC driver downloaded and added to our classpath (step 1) to connect to our database and do CRUD operations accordingly.
+
+
+```SQL
+// Sample query to create doctor and patient schemas.
+
+create database hospital;
+use hospital;
+
+create table patients(
+patient_id INT AUTO_INCREMENT PRIMARY KEY,
+patient_name VARCHAR(255) NOT NULL,
+patient_age INT NOT NULL,
+patient_gender VARCHAR(10) NOT NULL);
+
+
+create table doctors(
+doctor_id INT AUTO_INCREMENT PRIMARy KEY,
+doctor_name VARCHAR(255) NOT NULL,
+specialization VARCHAR(255) NOT NULL);
+
+create table appointments(
+id INT AUTO_INCREMENT PRIMARY KEY,
+patient_id INT NOT NULL,
+doctor_id INT NOT NULL,
+appointment_date DATE NOT NULL,
+FOREIGN KEY (patient_id) REFERENCES patients(patient_id),
+FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id));
+
+insert into hospital.doctors(doctor_name,specialization)
+values ('Dr George', 'General Physician'); 
+
+insert into hospital.doctors(doctor_name,specialization)
+values ('Dr Michael', 'Neuro Surgeon'); 
+
+```
 
 ```Java
 // Sample code snippet for connecting to MySQL database using JDBC and mysql connector.
