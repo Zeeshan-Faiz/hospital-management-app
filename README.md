@@ -20,16 +20,28 @@ The "View Doctors" feature allows users to access a list of doctors available in
 
 Patients can book appointments based on the availability of doctors. The application checks the doctor's schedule, ensuring that appointments are booked only during their free slots. The booking process includes selecting a preferred doctor and specifying the desired appointment time.
 
-## How to Use
+## Installation
 
-1. **Installation**: Before using the application, make sure to install the MySQL Connector for Java and add it to the classpath.
-https://dev.mysql.com/downloads/connector/j/
+1. **Java Development Kit (JDK):** Ensure you have Java installed on your system.
+2. **MySQL Connector/J:** Download and install the MySQL Connector/J from [MySQL Downloads](https://dev.mysql.com/downloads/connector/j/).
+3. **Add Connector to Classpath:** Add the MySQL Connector/J JAR file to your project's classpath.
 
-2. **MySQL Database**: Also note that you have MYSQL database installed and running in the background.
+## Database Setup
 
-3. **SQL Query**: Run the SQL query provided alongside in the repository in MySQL WorkBench or MySQL Shell to create schemas for patients and doctors.
+1. **Create Database:** Run the SQL script provided to create the necessary database and tables.
+2. **Configure Connection:** Update the JDBC connection details in your Java code.
 
-4. **JDBC Driver**: We'll be using JDBC driver downloaded and added to our classpath (step 1) to connect to our database and do CRUD operations accordingly.
+## Running the Application
+
+1. Compile and run the Java application.
+2. Follow the on-screen prompts to navigate through the functionalities.
+
+## Dependencies
+
+- Java
+- MySQL Database
+- MySQL Connector/J
+
 
 
 ```SQL
